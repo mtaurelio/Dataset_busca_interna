@@ -1,0 +1,54 @@
+function defineStructure() {}
+function onSync(lastSyncDate) {}
+
+function createDataset(fields, constraints, sortFields) {
+  var datasetReturn = new DatasetBuilder();
+
+  datasetReturn.addColumn("email");
+  datasetReturn.addColumn("nome");
+
+  var datasetConsulta = DatasetFactory.getDataset(
+    "colleague",
+    null,
+    null,
+    null
+  );
+  ("RETORNO")
+  log.dir(datasetConsulta)
+   ("RETORNO")
+  log.dir(datasetConsulta.rows)
+  
+  for (var i = 0; i < datasetConsulta.rows.length; i++) {
+    var row = datasetConsulta.rows[i];
+    var email = row.getValue("mail");
+    var nome = row.getValue("colleagueName");
+    datasetReturn.addRow([email, nome]);
+  }
+  return datasetReturn;
+}
+
+function onMobileSync(user) {}
+
+// var dataset = DatasetBuilder.newDataset();
+
+//   dataset.addColumn("email");
+//   dataset.addColumn("nomeColaborador");
+
+//   var consultaUsuario = DatasetFactory.getDataset(
+//     "colleague",
+//     null,
+//     constraints,
+//     null
+//   );
+
+//   if (consultaUsuario != null && consultaUsuario.rowsCount > 0) {
+//     for (var i = 0; i < consultaUsuario.rowsCount; i++) {
+//       let row = consultaUsuario.rows[i];
+//       let email = row.getValue("mail");
+//       let nome = row.getValue("colleagueName");
+//       dataset.addRow([email, nome]);
+//     }
+//   }
+
+//   return dataset;
+// }

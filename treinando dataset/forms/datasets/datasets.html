@@ -1,0 +1,66 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div class="row">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<i class="flaticon flaticon-monetization-on icon-md" aria-hidden="true"></i> Moedas do País
+						</h3>
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="moedasZoom">Moedas</label>
+						<input type="zoom" class="form-control" id="moedasZoom" name="moedasZoom" data-zoom="{
+								'displayKey': 'moeda',
+								'datasetId': 'moedas',
+								'maximumSelectionLength': '30',
+								'placeholder': 'Selecione a moeda',
+								'fields': [
+									{ 'field': 'simbolo', 'label': 'Símbolo' },
+									{ 'field': 'moeda', 'label': 'Moeda'},
+									{ 'field': 'valor', 'label': 'Valor' }
+								]
+							}" />
+					</div>
+
+
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="form-group col-md-1">
+					<label for="simbolo">Simbolo</label>
+					<input type="text" name="simbolo" id="simbolo" class="form-control">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="moeda">Moeda</label>
+					<input type="text" name="moeda" id="moeda" class="form-control">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="valor">Valor</label>
+					<input type="text" name="valor" id="valor" class="form-control">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="drr">Dif. rel. real</label>
+					<input type="text" name="drr" id="drr" class="form-control">
+				</div>
+			</div>
+
+
+		</form>
+	</div>
+	<script src="./script.js"></script>
+</body>
+
+</html>
